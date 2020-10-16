@@ -1,0 +1,86 @@
+.rounded(@width) {
+  -webkit-border-radius: @width;
+  -moz-border-radius: @width;
+  border-radius: @width;
+}
+
+.pos(@top, @left) {
+  top: @top;
+  left: @left;
+}
+
+.posCenter() {
+  .pos(50%, 50%);
+}
+
+.square(@width) {
+  width: @width;
+  height: @width;
+}
+
+.transform(@params) {
+  -webkit-transform: @params;
+  -moz-transform: @params;
+  -ms-transform: @params;
+  -o-transform: @params;
+  transform: @params;
+}
+
+.translate(@x,@y) {
+  .transform(translate(@x, @y));
+}
+
+.boxShadow(@attributes) {
+  -webkit-box-shadow: @attributes;
+  -moz-box-shadow: @attributes;
+  box-shadow: @attributes;
+}
+
+.transition(@attributes) {
+  -webkit-transition: @attributes;
+  -moz-transition: @attributes;
+  -ms-transition: @attributes;
+  -o-transition: @attributes;
+  transition: @attributes;
+}
+
+.flexCenter() {
+  justify-content: center;
+  align-items: center;
+}
+
+.fitParent() {
+  .square(100%)
+}
+
+.resetFormControlHover() {
+  &:hover, &:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.initLineClamp() {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+}
+
+.lineClamp(@lineNum) {
+  -webkit-line-clamp: @lineNum;
+  line-clamp: @lineNum;
+}
+
+.gradientBackground() {
+  background: @color_secondary; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, @color_primary, @color_secondary); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, @color_primary, @color_secondary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

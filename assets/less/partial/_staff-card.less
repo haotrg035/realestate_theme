@@ -1,0 +1,72 @@
+.staff-card {
+  background: #FFFFFF;
+  padding: 1.5rem;
+  text-align: center;
+  .boxShadow(1px 1px 3px lightgrey);
+
+  .card__header {
+    margin-bottom: 1rem;
+
+    .staff-image {
+      .square(100px);
+      .rounded(100%);
+      overflow: hidden;
+      border: 1px solid @color_text_secondary;
+      margin: 0 auto 1rem;
+
+      img {
+        .fitParent();
+        object-fit: cover;
+      }
+    }
+
+    .staff-name {
+      font-weight: bold;
+      font-size: 1.3rem;
+      line-height: 1em;
+      color: @color_primary;
+      margin-bottom: .5rem;
+    }
+
+    .staff-pos {
+      margin-bottom: 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: lighten(@color_text, 15%);
+    }
+  }
+
+  .staff-desc {
+    color: @color_text_secondary;
+    margin-bottom: .5rem;
+  }
+
+  .staff-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+
+    .contact__item {
+      &:not(:last-child) {
+        margin-right: .5rem;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        line-height: 2rem;
+        .square(2rem);
+        .rounded(100%);
+        background: @color_text;
+        color: #FFFFFF;
+        font-size: 1rem;
+        .transition(@transition_primary);
+
+        &:hover {
+          background: @color_primary;
+        }
+      }
+    }
+  }
+}
