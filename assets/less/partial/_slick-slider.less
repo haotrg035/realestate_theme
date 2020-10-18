@@ -1,0 +1,111 @@
+.slick-dots {
+  &-basic {
+    position: relative;
+
+    .slick-dots {
+      display: flex;
+      padding: 0 3rem;
+      bottom: -3rem;
+
+      li {
+        margin: 0;
+
+        button {
+          &::before {
+            .posCenter();
+            .translate(-50%, -50%);
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            .square(80%);
+            .rounded(100%);
+            .pos(48%, 52%);
+            .translate(-50%, -50%);
+            background: fade(@color_text, 20%);
+            opacity: 0;
+            .transition(@transition_primary);
+          }
+        }
+
+        &.slick-active {
+          button::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &-basic-2 {
+    position: relative;
+
+    .slick-dots {
+      display: flex;
+      padding: 0 3rem;
+      bottom: -3rem;
+      justify-content: center;
+
+      li {
+        margin: 0;
+
+        button {
+          .square(.25rem);
+          .rounded(100%);
+          background: fade(@color_text, 30%);
+          .transition(@transition_primary);
+
+          &::before {
+            display: none;
+          }
+        }
+
+        &.slick-active {
+          button {
+            background: @color_primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.slick-nav {
+  &-basic {
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      left: .25rem;
+      .translate(0, -50%);
+      z-index: 2;
+      .resetFormControlHover();
+      background: transparent;
+      color: #FFFFFF;
+      border: none;
+      font-size: 2rem;
+
+      &:last-child {
+        left: auto;
+        right: .25rem;
+      }
+    }
+
+    .slick-slide {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        .fitParent();
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, transparent, rgba(0, 0, 0, 0.3) 100%);
+      }
+    }
+  }
+}
+
+.page-news {
+
+}

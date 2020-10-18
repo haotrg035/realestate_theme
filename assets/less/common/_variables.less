@@ -1,0 +1,35 @@
+//COLORS
+@color_primary: #2ecc71;
+@color_primaryDarker: darken(@color_primary, 10%);
+@color_primaryLighter: lighten(@color_primary, 15%);
+@color_secondary: #eb3237;
+@color_secondaryDarker: darken(@color_secondary, 15%);
+@color_secondaryLighter: lighten(@color_secondary, 15%);
+
+
+@color_text: #333333;
+@color_text_secondary: lighten(@color_text, 25%);
+@color_lightGray: #F5F5F5;
+@color_border: lighten(@color_text, 60%);
+//SIZES
+@size_font: 13px;
+@size_logo_height: 65px;
+@size_logo_height_mobile: 45px;
+@size_input_height: 34px;
+
+//TRANSITION
+@transition_primary: all .3s ease-in-out;
+
+//SHADOW
+@shadow_primary: 2px 2px 3px #00000052;
+
+//MEDIA QUERIES
+@query_min_sm: ~'screen and (min-width: 576px)';
+@query_min_md: ~'screen and (min-width: 768px)';
+@query_min_lg: ~'screen and (min-width: 992px)';
+@query_min_xl: ~'screen and (min-width: 1200px)';
+
+@query_max_sm: ~'screen and (max-width: 575px)';
+@query_max_md: ~'screen and (max-width: 767px)';
+@query_max_lg: ~'screen and (max-width: 991px)';
+@query_max_xl: ~'screen and (max-width: 1219px)';

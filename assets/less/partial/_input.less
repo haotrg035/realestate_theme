@@ -1,0 +1,346 @@
+input, .form-control {
+  height: @size_input_height;
+  .rounded(16px);
+}
+
+.input-group-icon {
+  position: relative;
+
+  svg, i {
+    position: absolute;
+    top: 50%;
+    left: .75rem;
+    .translate(0, -50%);
+  }
+
+  input {
+    padding-left: 2.25rem;
+  }
+}
+
+.button-radio {
+  position: relative;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem 1rem;
+  .rounded(4px);
+  //border: 1px solid @color_primary;
+  background: fade(@color_primary, 30%);
+  color: @color_primary;
+  font-weight: bold;
+  .square(100%);
+  .transition(@transition_primary);
+  overflow: hidden;
+
+  &&--pill {
+    .rounded(14px);
+  }
+
+  &&--lightgray {
+    background: fade(@color_text, 10%);
+    color: @color_text;
+  }
+
+  &&--outline {
+    border: 1px solid @color_primary;
+    background: transparent;
+    color: @color_primary;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: @color_primary;
+    .translate(-50%, -50%);
+    .transition(all .2s ease-out);
+    .square(0);
+    .rounded(12px);
+    z-index: 1;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.active {
+    color: #fff !important;
+    background: @color_primary;
+
+    &::before {
+      .square(200%);
+      .transition(all .3s ease-in);
+    }
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    .square(100%);
+    opacity: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__label {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.range-slider {
+  border: 1px solid lighten(@color_text, 70%);
+  height: 12px;
+
+  .noUi {
+    &-connect {
+      background: @color_primary;
+    }
+
+    &-origin {
+      .noUi-handle {
+        .square(24px);
+        .rounded(100%);
+        .resetFormControlHover();
+        background: @color_primary;
+        display: flex;
+        justify-content: center;
+        border: 3px solid #ffffff;
+        .boxShadow(0 0 3px rgba(34, 34, 34, 0.57));
+        .transition(@transition_primary);
+
+        &:hover {
+          .boxShadow(0 0 6px rgba(34, 34, 34, 0.57)) !important;
+        }
+
+        &::before, &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.stacked-select {
+  @input_height: 40px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  font-size: @size_font - 1;
+  height: @input_height;
+  background: @color_lightGray;
+  transform-origin: center center;
+  overflow: hidden;
+  .transition(@transition_primary);
+  .rounded(4px);
+  @media @query_min_lg {
+    .rounded(4px);
+  }
+
+  &-outer {
+    position: relative;
+    height: @input_height;
+  }
+
+  &-backdrop {
+    background: #000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: 2;
+    transition: width 0s, height 0s, opacity .3s ease-in-out;
+    transform-origin: 50% 50%;
+    .translate(-50%, -50%);
+
+    &.show {
+      width: 100%;
+      height: 100%;
+      opacity: .4;
+      z-index: 4;
+    }
+  }
+
+  &, & &__item {
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    background: inherit;
+    .transition(@transition_primary);
+    color: fade(@color_text, 90%);
+    border-bottom: 1px solid transparent;
+    z-index: 1;
+
+    &:not(.selected) {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .fa {
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      .translate(0, -50%);
+      font-size: 1.1rem;
+
+      &.fa-check {
+        display: none;
+        color: @color_primary;
+      }
+    }
+
+    &.selected {
+      z-index: 2;
+    }
+
+    .item__inner {
+      position: relative;
+
+      .stacked-select {
+        &__input {
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          .square(100%);
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        &__label {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-bottom: 0;
+          height: @input_height;
+          width: 100%;
+          font-size: 1rem;
+          padding: 0 1rem;
+        }
+      }
+    }
+
+    &.placeholder {
+      .item__inner {
+        .stacked-select__label {
+          color: fade(@color_text, 60%);
+        }
+      }
+    }
+  }
+
+  &.show {
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    overflow: auto;
+    background: #fff;
+    .boxShadow(1px 1px 3px #7c7c7c);
+
+    .stacked-select__item {
+      opacity: 1;
+      position: relative;
+      .rounded(12px 12px 0 0);
+      border-color: fade(@color_text, 10%);
+
+      &:hover {
+        background: @color_lightGray;
+      }
+
+      .fa {
+        display: none;
+      }
+
+      &.selected {
+        border-color: transparent;
+
+        .stacked-select__label {
+          background: @color_lightGray;
+        }
+
+        .fa.fa-check {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.quantity-input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &__btn {
+    background: transparent;
+    border: none;
+    //.square(@size_input_height);
+    color: @color_primary;
+    padding: 0;
+    font-size: 1.8rem;
+    display: flex;
+    .square(23px);
+    .rounded(100%);
+    .flexCenter();
+    .resetFormControlHover();
+    .transition(@transition_primary);
+
+    &:hover {
+      background: @color_primary;
+      color: #fff;
+      .boxShadow(0 0 3px rgba(34, 34, 34, 0.57));
+    }
+  }
+
+  .form-control {
+    width: 6rem;
+    font-size: 1.2rem;
+    padding: 0;
+    height: @size_input_height;
+    border: none;
+    text-align: center;
+    background: transparent;
+    .resetFormControlHover();
+  }
+}
+
+.input-icon {
+  position: relative;
+
+  i, svg {
+    position: absolute;
+    left: .5rem;
+    top: 50%;
+    .translate(0, -50%);
+  }
+
+  input {
+    padding-left: 1.8rem;
+  }
+}

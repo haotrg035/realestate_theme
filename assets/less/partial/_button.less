@@ -1,0 +1,48 @@
+.page-button {
+  display: block;
+  .resetFormControlHover();
+  .rounded(4px);
+  border: none;
+  padding: .35rem .75rem;
+  .transition(@transition_primary);
+  //font-weight: bold;
+
+  &&-pill {
+    .rounded(12px);
+  }
+
+  & {
+    color: #fff;
+    background: @color_primary;
+
+    &:hover {
+      color: #fff;
+      background: @color_primaryDarker;
+    }
+  }
+
+  &&-outline {
+    background: transparent;
+    border: 1px solid @color_primary;
+    color: @color_primary;
+
+    &:hover {
+      background: @color_primary;
+      color: #fff;
+    }
+  }
+
+  &&--light-gray {
+    color: @color_text;
+    background: @color_lightGray;
+
+    &:hover {
+      background: darken(@color_lightGray, 10%);
+    }
+  }
+
+  &&--danger {
+    color: #fff;
+    background: var(--danger);
+  }
+}
