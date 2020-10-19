@@ -326,7 +326,7 @@
                xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
             <path
-              d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
           </svg>
           Đặt Lại Bộ Lọc
         </button>
@@ -393,8 +393,8 @@
   <div class="container">
     <div class="product-detail-body">
       <div class="product-detail-section">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <p class="product-detail__price">Giá: 999triệu/tháng</p>
+        <div class="product-detail__top-meta">
+          <p class="product-detail__price">Giá: <span>999.000.000đ/tháng</span></p>
           <a href="#" class="product-detail__category">Mini house</a>
         </div>
       </div>
@@ -407,20 +407,397 @@
           <li class="feature__item">Phòng khách: 2</li>
         </ul>
       </div>
-      <div class="product-detail-section">
+      <div class="product-detail-section product-detail-section--overview">
         <div class="section__header">
           <div class="header__title">Tổng quan</div>
         </div>
+        <div class="section__body position-relative">
+          <div class="product-detail__desc collapse collapsing" id="product-detail__desc">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor dolorum eligendi exercitationem
+              facere fugiat impedit ipsa iusto libero, molestias nam, nemo nesciunt omnis porro, quo repellat
+              reprehenderit sint temporibus.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor dolorum eligendi exercitationem
+              facere fugiat impedit ipsa iusto libero, molestias nam, nemo nesciunt omnis porro, quo repellat
+              reprehenderit sint temporibus.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor dolorum eligendi exercitationem
+              facere fugiat impedit ipsa iusto libero, molestias nam, nemo nesciunt omnis porro, quo repellat
+              reprehenderit sint temporibus.</p>
+          </div>
+          <button class="product-detail__desc-toggler btn btn-block"
+                  data-toggle="collapse"
+                  data-target="#product-detail__desc">
+            Xem thêm&nbsp;
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="product-detail-section product-detail-section--detail-info">
+        <div class="section__header">
+          <div class="header__title">Thông tin chi tiết</div>
+        </div>
         <div class="section__body">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor dolorum eligendi exercitationem
-            facere fugiat impedit ipsa iusto libero, molestias nam, nemo nesciunt omnis porro, quo repellat
-            reprehenderit sint temporibus.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor dolorum eligendi exercitationem
-            facere fugiat impedit ipsa iusto libero, molestias nam, nemo nesciunt omnis porro, quo repellat
-            reprehenderit sint temporibus.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor dolorum eligendi exercitationem
-            facere fugiat impedit ipsa iusto libero, molestias nam, nemo nesciunt omnis porro, quo repellat
-            reprehenderit sint temporibus.</p>
+          <ul class="detail-info__list list-unstyled">
+            <li><b>Pháp lý:</b> <span>Sổ hồng rời</span></li>
+            <li><b>Lộ giới:</b> <span>5m ô tô tới nhà</span></li>
+            <li><b>Diện tích:</b> <span>5500</span>m<sup>2</sup></li>
+            <li><b>Hướng nhà:</b> <span>Đông bắc</span></li>
+          </ul>
+          <ul class="detail-info__list list-unstyled">
+            <li><b>Pháp lý:</b> <span>Sổ hồng rời</span></li>
+            <li><b>Lộ giới:</b> <span>5m ô tô tới nhà</span></li>
+            <li><b>Diện tích:</b> <span>5500</span>m<sup>2</sup></li>
+            <li><b>Hướng nhà:</b> <span>Đông bắc</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="product-detail-section product-detail-section--buttons">
+        <div class="section-body">
+          <a href="#" class="page-button page-button-outline">Chia sẻ&nbsp;<i class="fa fa-share"></i></a>
+          <a href="#" class="page-button page-button-outline">Chia sẻ&nbsp;<i class="fa fa-heart"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="product-detail-body">
+      <div class="product-detail-section product-detail-section--utils">
+        <div class="section__header">
+          <div class="header__title">Tiện nghi</div>
+        </div>
+        <div class="section__body">
+          <ul class="utils-list list-unstyled">
+            <li class="list__item">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+              </svg>
+              <span>Máy lạnh</span>
+            </li>
+            <li class="list__item">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+              </svg>
+              <span>Máy nước nóng</span>
+            </li>
+            <li class="list__item">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+              </svg>
+              <span>Máy giặt</span>
+            </li>
+            <li class="list__item">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+              </svg>
+              <span>Tủ lạnh</span>
+            </li>
+            <li class="list__item">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+              </svg>
+              <span>Gym</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="product-detail-section product-detail-section--related">
+      <div class="section__header">
+        <div class="header__title">Bất động sản khác</div>
+      </div>
+      <div class="section__body">
+        <div class="product-card product-card--list">
+          <div class="product-card__header">
+            <div class="product-card__images">
+              <a href="#">
+                <img src="./assets/image/slider.jpg" alt="">
+              </a>
+            </div>
+            <div class="header__top">
+              <ul class="product-card__utils">
+                <li class="utils__item" data-toggle="tooltip" title="Xem nhanh">
+                  <button class="page-button product-card__btn-preview"
+                          data-target="#modal-previewing-product">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16"
+                         class="bi bi-arrows-angle-expand"
+                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
+                    </svg>
+                  </button>
+                </li>
+                <li class="utils__item">
+                  <button class="page-button product-card__btn-save" data-toggle="tooltip"
+                          title="Yêu thích">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-suit-heart"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M8 6.236l.894-1.789c.222-.443.607-1.08 1.152-1.595C10.582 2.345 11.224 2 12 2c1.676 0 3 1.326 3 2.92 0 1.211-.554 2.066-1.868 3.37-.337.334-.721.695-1.146 1.093C10.878 10.423 9.5 11.717 8 13.447c-1.5-1.73-2.878-3.024-3.986-4.064-.425-.398-.81-.76-1.146-1.093C1.554 6.986 1 6.131 1 4.92 1 3.326 2.324 2 4 2c.776 0 1.418.345 1.954.852.545.515.93 1.152 1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <div class="d-flex align-items-center justify-content-between">
+              <ul class="product-card__types">
+                <li class="type__item">
+                  <a href="#">mua bán</a>
+                </li>
+                <li class="type__item type__item--danger">
+                  <a href="#">Nổi bật</a>
+                </li>
+              </ul>
+              <a class="product-card__categories">Căn hộ</a>
+            </div>
+            <h3 class="product-card__title" title="CHO THUÊ MINI HOUSE HIỆN ĐẠI - TRUNG TÂM TP CẦN THƠ">
+              <a href="#">CHO THUÊ MINI HOUSE HIỆN ĐẠI - TRUNG TÂM TP CẦN THƠ</a>
+            </h3>
+            <div class="product-card__address"
+                 title="Hẻm 246, Tầm Vu, Hưng Lợi, Ninh Kiều Hẻm 246, Tầm Vu, Hưng Lợi, Ninh Kiều"
+                 data-toggle="tooltip">
+              <i class="address__icon fa fa-map-marker-alt"></i>
+              <p class="address__content">Hẻm 246, Tầm Vu, Hưng Lợi, Ninh Kiều Hẻm 246, Tầm Vu, Hưng
+                Lợi, Ninh
+                Kiều</p>
+            </div>
+          </div>
+          <div class="product-card__footer">
+            <p class="product-card__price"><strong>999 triệu/th</strong></p>
+            <div class="d-flex justify-content-between">
+              <div class="product-card__features">
+                <div class="feature__item">
+                  <figure class="item__icon"><i class="fa fa-bed"></i></figure>
+                  <p class="item__content">2</p>
+                </div>
+                <div class="feature__item">
+                  <figure class="item__icon"><i class="fa fa-bath"></i></figure>
+                  <p class="item__content">1</p>
+                </div>
+                <div class="feature__item">
+                  <figure class="item__icon">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-fullscreen"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1h-4zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5zM.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+                  </figure>
+                  <p class="item__content">30m<sup>2</sup></p>
+                </div>
+              </div>
+              <a href="#" class="page-button product-card__anchor">
+                Chi tiết&nbsp;
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-right"
+                     fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="product-card product-card--list">
+          <div class="product-card__header">
+            <div class="product-card__images">
+              <a href="#">
+                <img src="./assets/image/slider.jpg" alt="">
+              </a>
+            </div>
+            <div class="header__top">
+              <ul class="product-card__utils">
+                <li class="utils__item" data-toggle="tooltip" title="Xem nhanh">
+                  <button class="page-button product-card__btn-preview"
+                          data-target="#modal-previewing-product">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16"
+                         class="bi bi-arrows-angle-expand"
+                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
+                    </svg>
+                  </button>
+                </li>
+                <li class="utils__item">
+                  <button class="page-button product-card__btn-save" data-toggle="tooltip"
+                          title="Yêu thích">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-suit-heart"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M8 6.236l.894-1.789c.222-.443.607-1.08 1.152-1.595C10.582 2.345 11.224 2 12 2c1.676 0 3 1.326 3 2.92 0 1.211-.554 2.066-1.868 3.37-.337.334-.721.695-1.146 1.093C10.878 10.423 9.5 11.717 8 13.447c-1.5-1.73-2.878-3.024-3.986-4.064-.425-.398-.81-.76-1.146-1.093C1.554 6.986 1 6.131 1 4.92 1 3.326 2.324 2 4 2c.776 0 1.418.345 1.954.852.545.515.93 1.152 1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <div class="d-flex align-items-center justify-content-between">
+              <ul class="product-card__types">
+                <li class="type__item">
+                  <a href="#">mua bán</a>
+                </li>
+                <li class="type__item type__item--danger">
+                  <a href="#">Nổi bật</a>
+                </li>
+              </ul>
+              <a class="product-card__categories">Căn hộ</a>
+            </div>
+            <h3 class="product-card__title" title="CHO THUÊ MINI HOUSE HIỆN ĐẠI - TRUNG TÂM TP CẦN THƠ">
+              <a href="#">CHO THUÊ MINI HOUSE HIỆN ĐẠI - TRUNG TÂM TP CẦN THƠ</a>
+            </h3>
+            <div class="product-card__address"
+                 title="Hẻm 246, Tầm Vu, Hưng Lợi, Ninh Kiều Hẻm 246, Tầm Vu, Hưng Lợi, Ninh Kiều"
+                 data-toggle="tooltip">
+              <i class="address__icon fa fa-map-marker-alt"></i>
+              <p class="address__content">Hẻm 246, Tầm Vu, Hưng Lợi, Ninh Kiều Hẻm 246, Tầm Vu, Hưng
+                Lợi, Ninh
+                Kiều</p>
+            </div>
+          </div>
+          <div class="product-card__footer">
+            <p class="product-card__price"><strong>999 triệu/th</strong></p>
+            <div class="d-flex justify-content-between">
+              <div class="product-card__features">
+                <div class="feature__item">
+                  <figure class="item__icon"><i class="fa fa-bed"></i></figure>
+                  <p class="item__content">2</p>
+                </div>
+                <div class="feature__item">
+                  <figure class="item__icon"><i class="fa fa-bath"></i></figure>
+                  <p class="item__content">1</p>
+                </div>
+                <div class="feature__item">
+                  <figure class="item__icon">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-fullscreen"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1h-4zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5zM.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+                  </figure>
+                  <p class="item__content">30m<sup>2</sup></p>
+                </div>
+              </div>
+              <a href="#" class="page-button product-card__anchor">
+                Chi tiết&nbsp;
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-right"
+                     fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="product-card product-card--list">
+          <div class="product-card__header">
+            <div class="product-card__images">
+              <a href="#">
+                <img src="./assets/image/slider.jpg" alt="">
+              </a>
+            </div>
+            <div class="header__top">
+              <ul class="product-card__utils">
+                <li class="utils__item" data-toggle="tooltip" title="Xem nhanh">
+                  <button class="page-button product-card__btn-preview"
+                          data-target="#modal-previewing-product">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16"
+                         class="bi bi-arrows-angle-expand"
+                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
+                    </svg>
+                  </button>
+                </li>
+                <li class="utils__item">
+                  <button class="page-button product-card__btn-save" data-toggle="tooltip"
+                          title="Yêu thích">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-suit-heart"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M8 6.236l.894-1.789c.222-.443.607-1.08 1.152-1.595C10.582 2.345 11.224 2 12 2c1.676 0 3 1.326 3 2.92 0 1.211-.554 2.066-1.868 3.37-.337.334-.721.695-1.146 1.093C10.878 10.423 9.5 11.717 8 13.447c-1.5-1.73-2.878-3.024-3.986-4.064-.425-.398-.81-.76-1.146-1.093C1.554 6.986 1 6.131 1 4.92 1 3.326 2.324 2 4 2c.776 0 1.418.345 1.954.852.545.515.93 1.152 1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <div class="d-flex align-items-center justify-content-between">
+              <ul class="product-card__types">
+                <li class="type__item">
+                  <a href="#">mua bán</a>
+                </li>
+                <li class="type__item type__item--danger">
+                  <a href="#">Nổi bật</a>
+                </li>
+              </ul>
+              <a class="product-card__categories">Căn hộ</a>
+            </div>
+            <h3 class="product-card__title" title="CHO THUÊ MINI HOUSE HIỆN ĐẠI - TRUNG TÂM TP CẦN THƠ">
+              <a href="#">CHO THUÊ MINI HOUSE HIỆN ĐẠI - TRUNG TÂM TP CẦN THƠ</a>
+            </h3>
+            <div class="product-card__address"
+                 title="Hẻm 246, Tầm Vu, Hưng Lợi, Ninh Kiều Hẻm 246, Tầm Vu, Hưng Lợi, Ninh Kiều"
+                 data-toggle="tooltip">
+              <i class="address__icon fa fa-map-marker-alt"></i>
+              <p class="address__content">Hẻm 246, Tầm Vu, Hưng Lợi, Ninh Kiều Hẻm 246, Tầm Vu, Hưng
+                Lợi, Ninh
+                Kiều</p>
+            </div>
+          </div>
+          <div class="product-card__footer">
+            <p class="product-card__price"><strong>999 triệu/th</strong></p>
+            <div class="d-flex justify-content-between">
+              <div class="product-card__features">
+                <div class="feature__item">
+                  <figure class="item__icon"><i class="fa fa-bed"></i></figure>
+                  <p class="item__content">2</p>
+                </div>
+                <div class="feature__item">
+                  <figure class="item__icon"><i class="fa fa-bath"></i></figure>
+                  <p class="item__content">1</p>
+                </div>
+                <div class="feature__item">
+                  <figure class="item__icon">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-fullscreen"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1h-4zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5zM.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+                  </figure>
+                  <p class="item__content">30m<sup>2</sup></p>
+                </div>
+              </div>
+              <a href="#" class="page-button product-card__anchor">
+                Chi tiết&nbsp;
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-right"
+                     fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -602,7 +979,7 @@
                   <path fill-rule="evenodd"
                         d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694L1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
                   <path
-                    d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+                      d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
                 </svg>
               </div>
               <p class="item__content">ABC, quận Ninh Kiều, tp. Cần Thơ</p>
