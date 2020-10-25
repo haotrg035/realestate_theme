@@ -45,8 +45,6 @@
   .post-meta {
     display: flex;
     margin-bottom: 1rem;
-
-
   }
 
   .post-cate, .post-date {
@@ -87,5 +85,113 @@
   .post-anchor {
     color: @color_primaryDarker;
     margin-bottom: 0;
+  }
+
+  &&--list {
+    display: grid;
+    grid-template-columns: 120px calc(100% - 120px);
+    .boxShadow(none);
+
+    @media @query_min_md {
+      grid-template-columns: 160px calc(100% - 160px);
+    }
+
+    .card__header {
+      padding: 0;
+      .rounded(4px);
+      overflow: hidden;
+
+      &::after {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+
+      .post-image {
+        height: 100%;
+      }
+    }
+
+    .card__body {
+      padding: 0 0 0 .75rem;
+      @media @query_min_lg {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .post-title {
+        font-size: 1.15rem;
+        .initLineClamp();
+        .lineClamp(3);
+        height: 4rem;
+        margin-bottom: .5rem;
+
+        @media @query_min_sm {
+          .lineClamp(2);
+          height: 2.6rem;
+        }
+
+        a {
+          color: @color_text;
+
+          &:hover {
+            color: @color_primary;
+          }
+        }
+      }
+
+      .post-summary {
+        display: none;
+        @media @query_min_sm {
+          display: block;
+          .initLineClamp();
+          .lineClamp(2);
+          margin-bottom: .5rem;
+        }
+      }
+
+      .post-meta {
+        margin-bottom: 0;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        position: relative;
+
+        .post-category {
+          color: @color_primary;
+          font-weight: bold;
+          margin-right: 1rem;
+          width: 100%;
+
+          @media @query_min_sm {
+            width: auto;
+          }
+
+          &:hover {
+            color: @color_primaryDarker
+          }
+        }
+
+        .post-date {
+          color: @color_text_secondary;
+          margin-right: auto;
+
+          i {
+            font-size: .9rem;
+          }
+        }
+
+        .post-anchor {
+          font-weight: bold;
+          color: @color_primary;
+
+          &:hover {
+            color: @color_primaryDarker;
+          }
+        }
+      }
+    }
   }
 }

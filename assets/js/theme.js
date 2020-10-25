@@ -194,56 +194,7 @@
     });
   }
   if (floatingSearch) {
-    let filterPrice = floatingSearch.querySelector('.filters__price');
     let filterArea = floatingSearch.querySelector('.filters__area');
-
-    if (filterPrice) {
-      let slider = filterPrice.querySelector('#price-range-slider');
-      let initConfig = slider.dataset;
-      let priceInputs = [
-        filterPrice.querySelector('input[name="search_price_start"]'),
-        filterPrice.querySelector('input[name="search_price_end"]')
-      ];
-      let priceLabels = [
-        filterPrice.querySelector('p.range__start'),
-        filterPrice.querySelector('p.range__end')
-      ];
-
-      noUiSlider.create(slider, {
-        start: [
-          parseInt(initConfig.currentStart) || 1000000,
-          parseInt(initConfig.currentEnd) || 100000000
-        ],
-        step: parseInt(initConfig.step) || 1000000,
-        connect: true,
-        // tooltips: true,
-        format: wNumb({
-          decimals: 3,
-          thousand: '.',
-          suffix: ' ₫'
-        }),
-        range: {
-          'min': parseInt(initConfig.min) || 0,
-          'max': parseInt(initConfig.max) || 100000000
-        }
-      });
-
-      slider.noUiSlider.on('update', function (values, handle) {
-        let newValue = parseInt(values[handle].replaceAll(/[^\d]/gi, ''));
-
-        if (handle === 1) {
-          if (newValue >= parseInt(initConfig.max)) {
-            priceLabels[handle].innerText = values[handle] + ' +';
-          } else {
-            priceLabels[handle].innerText = values[handle];
-          }
-        } else {
-          priceLabels[handle].innerText = values[handle];
-        }
-        priceInputs[handle].value = values[handle].replaceAll(/[^\d]/gi, '');
-
-      });
-    }
 
     if (filterArea) {
       let slider = filterArea.querySelector('#area-range-slider');
@@ -292,61 +243,56 @@
       });
     }
   }
-})();
 
-(function () {
-  let stackedSelects = document.querySelectorAll('.stacked-select');
+  let rangeSliders = document.querySelectorAll('.range-slider-wrapper');
 
-  if (stackedSelects.length > 0) {
-    const showSelect = (select, backdrop) => {
-      select.classList.toggle('show');
-      if (backdrop !== null) {
-        setTimeout(() => {
-          backdrop.classList.toggle('show');
-        }, 300);
-      }
-    };
+  if (rangeSliders.length > 0) {
+    rangeSliders.forEach((rangeSlider, index) => {
+      let slider = rangeSlider.querySelector('.range-slider');
+      let initConfig = slider.dataset;
+      let areaInputs = [
+        rangeSlider.querySelector('input.input-start'),
+        rangeSlider.querySelector('input.input-end')
+      ];
+      let areaLabels = [
+        rangeSlider.querySelector('.range__label .range__start'),
+        rangeSlider.querySelector('.range__label .range__end')
+      ];
 
-    for (let select of stackedSelects) {
-      let backdrop = select.parentElement.querySelector('.stacked-select-backdrop');
-      let listItem = select.querySelectorAll('.stacked-select__item');
+      noUiSlider.create(slider, {
+        start: [
+          parseInt(initConfig.currentStart) || 1000000,
+          parseInt(initConfig.currentEnd) || 100000000
+        ],
+        step: parseInt(initConfig.step) || 1000000,
+        connect: true,
+        // tooltips: true,
+        format: wNumb({
+          decimals: parseInt(initConfig.decimals) || 3,
+          thousand: initConfig.thousand || '.',
+          suffix: initConfig.suffix || ''
+        }),
+        range: {
+          'min': parseInt(initConfig.min) || 0,
+          'max': parseInt(initConfig.max) || 100000000
+        }
+      });
 
-      const changeItem = (targetItem, isSelected = true) => {
-        targetItem.querySelector('input[type=radio]').checked = isSelected;
-        if (isSelected) {
-          targetItem.classList.add('selected');
+      slider.noUiSlider.on('update', function (values, handle) {
+        let newValue = parseInt(values[handle].replaceAll(/[^\d]/gi, ''));
+
+        if (handle === 1) {
+          if (newValue >= parseInt(initConfig.max)) {
+            areaLabels[handle].innerText = values[handle] + ' +';
+          } else {
+            areaLabels[handle].innerText = values[handle];
+          }
         } else {
-          targetItem.classList.remove('selected');
+          areaLabels[handle].innerText = values[handle];
         }
-      };
-
-      select.addEventListener('click', () => {
-        let showingSelect = document.querySelectorAll('.stacked-select.show');
-        if (showingSelect.length > 0) {
-          showingSelect.forEach((el, index) => {
-            if (el !== select) {
-              el.classList.remove('show');
-            }
-          });
-        }
-      })
-
-      if (listItem.length > 0) {
-        for (let item of listItem) {
-          item.addEventListener('click', () => {
-            changeItem(select.querySelector('.selected'), false);
-            changeItem(item, true);
-            showSelect(select, backdrop);
-          });
-        }
-      }
-
-      if (backdrop !== null) {
-        backdrop.addEventListener('click', () => {
-          showSelect(select, backdrop);
-        });
-      }
-    }
+        areaInputs[handle].value = values[handle].replaceAll(/[^\d]/gi, '');
+      });
+    });
   }
 })();
 
@@ -457,25 +403,14 @@
 })();
 
 (function () {
-  $('[data-toggle="tooltip"]').tooltip();
-
-  document.querySelector('body')
-    .addEventListener('click', e => {
-      if (
-        !e.target.classList.contains('stacked-select-outer') &&
-        $(e.target).parents('.stacked-select-outer').length <= 0
-      ) {
-        let showingSelects = document
-          .querySelectorAll('.stacked-select.show');
-        if (showingSelects.length > 0) {
-          showingSelects.forEach((el, index) => {
-            el.classList.remove('show');
-            if (el.parentElement.querySelector('.stacked-select-backdrop')) {
-              el.parentElement.querySelector('.stacked-select-backdrop')
-                .classList.remove('show');
-            }
-          });
-        }
-      }
+  let selectPickers = document.querySelectorAll('.selectpicker');
+  if (selectPickers.length > 0) {
+    selectPickers.forEach((select, index) => {
+      $(select).selectpicker();
     })
+  }
+})();
+
+(function () {
+  $('[data-toggle="tooltip"]').tooltip();
 })();

@@ -4,13 +4,12 @@
   z-index: 9;
   background: #ffffffed;
   padding: .5rem 0;
-  .boxShadow(@shadow_primary);
+  //.boxShadow(@shadow_primary);
   .transition(all .3s ease-in);
 
   @media @query_min_lg {
     width: 100%;
     padding: 0;
-    .boxShadow(none);
     //border-bottom: 1px solid fade(white, 30%);
     background: #FFFFFF;
   }
@@ -92,9 +91,7 @@
   }
 
   &.scrolled {
-    @media @query_min_lg {
-      .boxShadow(1px 1px 3px @color_lightGray);
-    }
+    .boxShadow(1px 1px 3px @color_text_secondary);
 
     &:not(.showing-search-bar) {
       .site-header__inner {
@@ -337,7 +334,7 @@
             @media @query_min_lg {
               padding: 1rem 1.5rem;
               font-weight: normal;
-              border-bottom: 1px solid lighten(@color_text, 60%);
+              //border-bottom: 1px solid lighten(@color_text, 60%);
               min-width: 13rem;
               font-size: .8rem;
             }

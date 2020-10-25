@@ -128,170 +128,6 @@ input, .form-control {
   }
 }
 
-.stacked-select {
-  @input_height: 40px;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  z-index: 2;
-  font-size: @size_font - 1;
-  height: @input_height;
-  background: @color_lightGray;
-  transform-origin: center center;
-  overflow: hidden;
-  .transition(@transition_primary);
-  .rounded(4px);
-  @media @query_min_lg {
-    .rounded(4px);
-  }
-
-  &-outer {
-    position: relative;
-    height: @input_height;
-  }
-
-  &-backdrop {
-    background: #000;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    z-index: 2;
-    transition: width 0s, height 0s, opacity .3s ease-in-out;
-    transform-origin: 50% 50%;
-    .translate(-50%, -50%);
-
-    &.show {
-      width: 100%;
-      height: 100%;
-      opacity: .4;
-      z-index: 4;
-    }
-  }
-
-  &, & &__item {
-    list-style: none;
-  }
-
-  &__item {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    opacity: 1;
-    background: inherit;
-    .transition(@transition_primary);
-    color: fade(@color_text, 90%);
-    border-bottom: 1px solid transparent;
-    z-index: 1;
-
-    &:not(.selected) {
-      position: absolute;
-      opacity: 0;
-    }
-
-    .fa {
-      position: absolute;
-      top: 50%;
-      right: 1rem;
-      .translate(0, -50%);
-      font-size: 1.1rem;
-
-      &.fa-check {
-        display: none;
-        color: @color_primary;
-      }
-    }
-
-    &.selected {
-      z-index: 2;
-    }
-
-    .item__inner {
-      position: relative;
-
-      .stacked-select {
-        &__input {
-          opacity: 0;
-          position: absolute;
-          top: 0;
-          left: 0;
-          .square(100%);
-
-          &:hover {
-            cursor: pointer;
-          }
-        }
-
-        &__label {
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          margin-bottom: 0;
-          height: @input_height;
-          width: 100%;
-          font-size: 1rem;
-          padding: 0 1rem;
-        }
-      }
-    }
-
-    &.placeholder {
-      .item__inner {
-        .stacked-select__label {
-          color: fade(@color_text, 60%);
-        }
-      }
-    }
-  }
-
-  &.show {
-    z-index: 5;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    max-height: 50vh;
-    overflow: auto;
-    background: #fff;
-    .boxShadow(1px 1px 3px #7c7c7c);
-
-    .stacked-select__item {
-      opacity: 1;
-      position: relative;
-      .rounded(12px 12px 0 0);
-      border-color: fade(@color_text, 10%);
-
-      &:hover {
-        background: @color_lightGray;
-      }
-
-      .fa {
-        display: none;
-      }
-
-      &.selected {
-        border-color: transparent;
-
-        .stacked-select__label {
-          background: @color_lightGray;
-        }
-
-        .fa.fa-check {
-          display: block;
-        }
-      }
-    }
-  }
-}
-
 .quantity-input {
   display: flex;
   align-items: center;
@@ -343,4 +179,144 @@ input, .form-control {
   input {
     padding-left: 1.8rem;
   }
+}
+
+.bootstrap-select {
+  .dropdown-toggle {
+    padding: .5rem;
+    border: 1px solid @color_border;
+    .rounded(4px);
+    color: @color_text !important;
+
+    &:hover, &:focus {
+      outline: none !important;
+      border-color: @color_primary;
+      background: #FFFFFF;
+    }
+
+    .filter-option-inner {
+      .font-weight-bold {
+        color: @color_text;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    padding: 0;
+    .rounded(4px);
+    border: none;
+    .boxShadow(0 1px 10px #24242452);
+
+    .bs-searchbox {
+      padding: .25rem;
+
+      .form-control {
+        .rounded(0);
+      }
+    }
+
+    li {
+      &:not(:last-child) {
+        border-bottom: 1px solid @color_border;
+      }
+
+      a.dropdown-item {
+        padding: .5rem 1rem;
+
+        &.active {
+          background: @color_primary;
+        }
+      }
+    }
+  }
+}
+
+
+.custom-switch {
+  .custom-control-input {
+    &:checked ~ .custom-control-label::before {
+      background-color: @color_primary;
+      border-color: @color_primary;
+    }
+  }
+
+  .custom-control-label {
+    background-color: #FFFFFF !important;
+
+    &::before {
+      top: 0 !important;
+    }
+
+    &::after {
+      top: 0.1rem !important;
+    }
+  }
+}
+
+/* for md */
+.custom-switch.custom-switch-md .custom-control-label {
+  padding-left: 2rem;
+  //padding-bottom: 1.5rem;
+}
+
+.custom-switch.custom-switch-md .custom-control-label::before {
+  height: 1.5rem;
+  width: calc(2rem + 0.75rem);
+  border-radius: 3rem;
+}
+
+.custom-switch.custom-switch-md .custom-control-label::after {
+  width: calc(1.5rem - 4px);
+  height: calc(1.5rem - 4px);
+  border-radius: calc(2rem - (1.5rem / 2));
+}
+
+.custom-switch.custom-switch-md .custom-control-input:checked ~ .custom-control-label::after {
+  transform: translateX(calc(1.5rem - 0.25rem));
+}
+
+/* for lg */
+
+.custom-switch.custom-switch-lg .custom-control-label {
+  padding-left: 3rem;
+  padding-bottom: 2rem;
+}
+
+.custom-switch.custom-switch-lg .custom-control-label::before {
+  height: 2rem;
+  width: calc(3rem + 0.75rem);
+  border-radius: 4rem;
+}
+
+.custom-switch.custom-switch-lg .custom-control-label::after {
+  width: calc(2rem - 4px);
+  height: calc(2rem - 4px);
+  border-radius: calc(3rem - (2rem / 2));
+}
+
+.custom-switch.custom-switch-lg .custom-control-input:checked ~ .custom-control-label::after {
+  transform: translateX(calc(2rem - 0.25rem));
+}
+
+/* for xl */
+
+.custom-switch.custom-switch-xl .custom-control-label {
+  padding-left: 4rem;
+  padding-bottom: 2.5rem;
+}
+
+.custom-switch.custom-switch-xl .custom-control-label::before {
+  height: 2.5rem;
+  width: calc(4rem + 0.75rem);
+  border-radius: 5rem;
+}
+
+.custom-switch.custom-switch-xl .custom-control-label::after {
+  width: calc(2.5rem - 4px);
+  height: calc(2.5rem - 4px);
+  border-radius: calc(4rem - (2.5rem / 2));
+}
+
+.custom-switch.custom-switch-xl .custom-control-input:checked ~ .custom-control-label::after {
+  transform: translateX(calc(2.5rem - 0.25rem));
 }
